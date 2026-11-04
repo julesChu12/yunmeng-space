@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "everyday-living",
+    "title": "让客餐厅，多一点从容",
+    "subtitle": "把收纳和搭配，一起放进日常。",
+    "kind": "concept",
+    "published": true,
+    "featured": true,
+    "categories": ["木作收纳", "软装搭配"],
+    "space": "客餐厅",
+    "cover": "/images/home-concept.jpg",
+    "coverPosition": "center",
+    "coverAlt": "AI 概念客餐厅：白色与木色组合柜、自然采光和布艺沙发。",
+    "imageCredit": "AI 生成意向图，非真实完工案例",
+    "summary": "柜子里放什么、家具怎么搭，不妨一起考虑。让公共空间好收拾，也保留坐下来聊天的余地。",
+    "facts": [{ "label": "空间", "value": "客餐厅" }, { "label": "设计关注", "value": "收纳规划、木色与布艺搭配" }, { "label": "内容性质", "value": "概念提案，非真实业主项目" }],
+    "sections": [
+      { "title": "先给日常物品找个位置", "text": "书、杂物和展示的小东西，需要的位置并不一样。封闭柜体承担主要收纳，开放格留给常用物品；展示的位置少一点，日常整理也更轻松。" },
+      { "title": "木色有呼应，布料让空间柔和下来", "text": "柜体、餐桌和茶几的木色不必完全相同，但要放在一起比较。沙发和窗帘先选大面积的基础色，再用抱枕或绿植补充一点变化。" },
+      { "title": "好看之外，再核对一次好不好用", "text": "柜门是否有足够的开启空间，插座会不会被遮住，常用物品拿取是否顺手。这些问题需要在真实项目量房和图纸确认时逐一核对。" }
+    ],
+    "gallery": [{ "src": "/images/home-concept.jpg", "alt": "客餐厅整体收纳与软装的 AI 意向全景。", "caption": "整体意向：柜体、餐桌与布艺之间的关系。" }]
+  },
+  {
+    "slug": "a-place-to-come-home",
+    "title": "回家，先有一处安放",
+    "subtitle": "把随手放下的东西，接住。",
+    "kind": "concept",
+    "published": true,
+    "featured": true,
+    "categories": ["木作收纳"],
+    "space": "玄关与餐边",
+    "cover": "/images/entry-concept.jpg",
+    "coverPosition": "center",
+    "coverAlt": "AI 居家意向图：原木玄关柜、换鞋凳与餐桌，展示入户收纳的想法。",
+    "imageCredit": "AI 生成意向图，非真实完工案例",
+    "summary": "钥匙、包和常穿的鞋，有固定的去处。用一点开放空间，换一个更顺手的回家动线。",
+    "facts": [{ "label": "空间", "value": "玄关与餐边" }, { "label": "设计关注", "value": "入户动线、随手收纳" }, { "label": "内容性质", "value": "概念提案，非真实业主项目" }],
+    "sections": [
+      { "title": "想一想，进门后的第一个动作", "text": "先放包，还是先换鞋？从这个顺序开始安排台面、挂放区和换鞋的位置。柜子不只看立面，也要看站在门口时怎么使用。" },
+      { "title": "不是每一格，都需要一扇门", "text": "每天拿取的钥匙、家居鞋和常用的小物，可以留在容易拿到的位置。不常用的物品再收进柜里，让开放区有明确的用途。" },
+      { "title": "把相邻空间放在一起考虑", "text": "玄关和餐边柜相邻时，先理清各自要放的东西，再协调柜体比例、材质和照明。最终尺寸与结构需要结合现场条件确认。" }
+    ],
+    "gallery": [{ "src": "/images/entry-concept.jpg", "alt": "玄关收纳与餐边空间的 AI 概念全景。", "caption": "入户意向：换鞋、放下随身物品，再走进家里。" }]
+  }
+]

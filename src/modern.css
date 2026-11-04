@@ -1,0 +1,139 @@
+/* 影像版独立作用域，保留原有居家版的视觉与交互。 */
+.modern-page { color-scheme: light; --bg: #f5f6f3; --surface: #e9ede6; --paper: #f5f6f3; --text: #1e2925; --muted: #5f6b62; --accent: #365c4d; --on-accent: #f8faf6; --line: #cdd5cb; --overlay: rgb(20 30 25 / 55%); --radius: 0; }
+.modern-shell { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
+.modern-page .site-header { border: 0; }
+.modern-page .wordmark { font-size: 23px; letter-spacing: .12em; }
+.film-hero { position: relative; height: min(820px, calc(100svh - 80px)); min-height: 560px; color: #fff; background: #39423b; isolation: isolate; }
+.film-media, .film-poster, .film-poster img, #hero-film, .film-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.film-poster img, #hero-film { object-fit: cover; }
+#hero-film { opacity: 0; transition: opacity .5s; }
+#hero-film.is-ready { opacity: 1; }
+.film-shade { background: linear-gradient(90deg, rgb(13 24 19 / 54%), transparent 74%), linear-gradient(0deg, rgb(13 24 19 / 52%), transparent 50%); pointer-events: none; }
+.film-copy { position: absolute; left: max(56px, calc((100% - 1280px) / 2)); bottom: 126px; }
+.film-copy > p { font-size: 13px; letter-spacing: .14em; margin-bottom: 21px; }
+.film-copy h1 { font-size: clamp(46px, 5.2vw, 76px); font-weight: 400; line-height: 1.3; letter-spacing: .02em; }
+.film-link { display: inline-flex; gap: 42px; align-items: center; min-height: 44px; margin-top: 30px; font-size: 14px; border-bottom: 1px solid rgb(255 255 255 / 65%); }
+.film-controls { position: absolute; inset: auto max(56px, calc((100% - 1280px) / 2)) 24px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.film-scenes { display: flex; gap: 26px; }
+.film-controls button { min-height: 44px; padding: 8px 0; color: #fff; font-size: 12px; border-radius: 0; }
+.film-scenes button { border-bottom: 1px solid transparent; opacity: .72; }
+.film-scenes button[aria-pressed="true"] { opacity: 1; border-color: #fff; }
+#film-toggle { display: flex; align-items: center; gap: 13px; }
+.film-play-symbol { display: block; width: 9px; height: 12px; border-left: 3px solid; border-right: 3px solid; }
+#film-toggle[data-paused="true"] .film-play-symbol { width: 0; height: 0; border: 6px solid transparent; border-right: 0; border-left: 9px solid; }
+.film-hero :focus-visible { outline-color: #fff; }
+.modern-media-notice { font-size: 10px; line-height: 1.8; color: var(--muted); padding-top: 14px; display: flex; justify-content: space-between; gap: 18px; }
+.modern-media-notice a { flex-shrink: 0; text-decoration: underline; }
+.modern-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-block: 104px 112px; }
+.modern-page h2 { font-size: clamp(30px, 3vw, 43px); line-height: 1.45; letter-spacing: -.025em; }
+.modern-intro > div { max-width: 470px; padding-top: 6px; }
+.modern-intro p, .modern-designer p:not(.modern-kicker) { color: var(--muted); font-size: 14px; line-height: 2; margin-bottom: 17px; }
+.modern-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 38px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--accent); color: var(--accent); font-size: 13px; }
+.modern-intro .modern-link { margin-top: 12px; }
+.modern-spaces { padding-block: 0 120px; }
+.modern-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding-top: 29px; border-top: 1px solid var(--line); }
+.modern-section-heading h2 { font-size: 30px; }
+.modern-section-heading p { font-size: 12px; color: var(--muted); }
+.modern-filters { display: flex; gap: 29px; margin-block: 24px 30px; }
+.modern-filters button, .modern-detail-tabs button { min-height: 44px; font-size: 12px; padding: 7px 0; color: var(--muted); border-bottom: 1px solid transparent; }
+.modern-filters [aria-pressed="true"], .modern-detail-tabs [aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.modern-space-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 66px; align-items: start; }
+.modern-space:nth-child(2) { margin-top: 90px; }
+.modern-space-grid[data-filtered="true"] .modern-space { margin-top: 0; }
+.modern-space-photo { position: relative; width: 100%; display: block; padding: 0; overflow: hidden; text-align: left; }
+.modern-space-photo img { aspect-ratio: 1.08; height: auto; transition: transform .6s; }
+.modern-space:nth-child(2) .modern-space-photo img { aspect-ratio: .9; }
+.modern-view { position: absolute; bottom: 16px; right: 16px; background: var(--bg); color: var(--text); padding: 8px 13px; font-size: 11px; }
+.modern-space-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: 17px; color: var(--muted); font-size: 10px; }
+.modern-space h3 { font-size: 23px; margin-top: 10px; }
+.modern-space h3 button { width: 100%; padding: 0; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.modern-space > p { max-width: 470px; color: var(--muted); font-size: 13px; line-height: 1.95; margin-top: 12px; }
+.modern-approach { background: var(--surface); padding-block: 80px; }
+.modern-approach-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; align-items: center; }
+.modern-approach figure img { aspect-ratio: 1; height: auto; }
+.modern-approach figcaption { display: flex; justify-content: space-between; gap: 15px; font-size: 10px; margin-top: 12px; color: var(--muted); }
+.modern-kicker { font-size: 11px; color: var(--accent); margin-bottom: 20px; }
+.modern-detail-tabs { display: flex; gap: 30px; margin-block: 26px; }
+#modern-detail-text { min-height: 135px; max-width: 420px; }
+#modern-detail-text h3 { font-size: 18px; margin-bottom: 12px; }
+#modern-detail-text p { color: var(--muted); font-size: 13px; line-height: 2; }
+.modern-detail-copy .modern-link { margin-top: 20px; }
+.modern-designer { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-block: 110px 90px; }
+.modern-designer > div:last-child { max-width: 480px; padding-top: 35px; }
+.modern-services { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; border-top: 1px solid var(--line); padding-block: 45px 90px; }
+.modern-services h2 { font-size: 29px; }
+.modern-services details { border-bottom: 1px solid var(--line); }
+.modern-services summary { display: flex; justify-content: space-between; gap: 20px; padding-block: 18px; font-size: 16px; }
+.modern-services summary span { font-size: 20px; }
+.modern-services details[open] summary span { transform: rotate(45deg); }
+.modern-services details p { font-size: 13px; line-height: 2; padding-bottom: 24px; color: var(--muted); }
+.modern-provenance { padding-block: 0 45px; font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; gap: 18px; }
+.modern-provenance a { text-decoration: underline; }
+.modern-page .contact-section { background: #dde5db; }
+.modern-space-dialog { padding: 0; border: 0; width: min(880px, calc(100% - 40px)); max-height: 90svh; color: var(--text); background: var(--bg); }
+.modern-space-dialog::backdrop { background: rgb(13 24 19 / 65%); }
+.modern-dialog-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 8px 22px; background: var(--bg); font-size: 12px; }
+.modern-dialog-header button { min-width: 44px; min-height: 44px; font-size: 26px; }
+#space-dialog-image { width: 100%; max-height: 430px; object-fit: cover; }
+.modern-space-dialog-copy { padding: 35px; }
+.modern-space-dialog-copy h2 { font-size: 28px; }
+.modern-space-dialog-copy > p:not(.modern-kicker), .modern-space-dialog-copy ul { color: var(--muted); font-size: 13px; line-height: 2; margin-block: 18px; }
+.modern-space-dialog-copy a { font-size: 12px; text-decoration: underline; }
+.modern-sources { padding-block: 40px 90px; }
+.modern-sources h1 { font-size: 40px; }
+.modern-sources > p { max-width: 720px; font-size: 14px; color: var(--muted); margin-top: 24px; }
+.modern-source-list { margin-block: 45px; }
+.modern-source-list article { padding-block: 25px; border-top: 1px solid var(--line); }
+.modern-source-list h2 { font-size: 23px; margin-block: 9px; overflow-wrap: anywhere; }
+.modern-source-list p { color: var(--muted); font-size: 12px; }
+.modern-source-list article > div { display: flex; flex-wrap: wrap; gap: 25px; font-size: 12px; margin-top: 15px; text-decoration: underline; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .modern-space-photo:hover img { transform: scale(1.025); } }
+@media (max-width: 1000px) { .modern-approach-inner { gap: 55px; } .modern-space-grid { gap: 35px; } .modern-section-heading { align-items: start; flex-direction: column; gap: 12px; } }
+@media (max-width: 767px) {
+  .modern-shell { width: calc(100% - 40px); }
+  .modern-page .site-header { height: 68px; }
+  .modern-page .wordmark { font-size: 20px; }
+  .film-hero { height: min(720px, calc(100svh - 68px)); min-height: 530px; }
+  .film-shade { background: linear-gradient(0deg, rgb(13 24 19 / 70%), rgb(13 24 19 / 5%) 82%); }
+  .film-copy { left: 22px; right: 22px; bottom: 111px; }
+  .film-copy > p { font-size: 11px; margin-bottom: 18px; }
+  .film-copy h1 { font-size: clamp(38px, 10.8vw, 52px); line-height: 1.35; }
+  .film-link { font-size: 12px; margin-top: 22px; gap: 32px; }
+  .film-controls { left: 22px; right: 22px; bottom: 19px; }
+  .film-scenes { gap: 23px; }
+  .film-controls button { font-size: 11px; }
+  .modern-media-notice { font-size: 9px; gap: 10px; align-items: start; }
+  .modern-intro, .modern-designer, .modern-services { grid-template-columns: 1fr; gap: 27px; padding-block: 64px; }
+  .modern-page h2 { font-size: 30px; }
+  .modern-intro p, .modern-designer p:not(.modern-kicker) { font-size: 13px; }
+  .modern-spaces { padding-bottom: 64px; }
+  .modern-section-heading h2 { font-size: 27px; }
+  .modern-section-heading p { font-size: 11px; }
+  .modern-filters { margin-block: 14px 24px; gap: 26px; }
+  .modern-space-grid { grid-template-columns: 1fr; gap: 43px; }
+  .modern-space:nth-child(2) { margin-top: 0; }
+  .modern-space-photo img, .modern-space:nth-child(2) .modern-space-photo img { aspect-ratio: 1.1; }
+  .modern-space h3 { font-size: 21px; }
+  .modern-space > p { font-size: 12px; }
+  .modern-approach { padding-block: 36px 50px; }
+  .modern-approach-inner { grid-template-columns: 1fr; gap: 33px; }
+  .modern-approach figure img { aspect-ratio: 1.18; }
+  .modern-approach figcaption { font-size: 9px; }
+  .modern-kicker { margin-bottom: 16px; }
+  .modern-detail-tabs { margin-block: 17px 23px; }
+  #modern-detail-text { min-height: 123px; }
+  #modern-detail-text h3 { font-size: 17px; }
+  #modern-detail-text p { font-size: 12px; }
+  .modern-detail-copy .modern-link { margin-top: 15px; }
+  .modern-designer > div:last-child { padding-top: 0; }
+  .modern-services { padding-top: 30px; gap: 20px; }
+  .modern-services h2 { font-size: 25px; }
+  .modern-provenance { flex-direction: column; padding-bottom: 35px; gap: 8px; font-size: 10px; }
+  .modern-space-dialog { width: calc(100% - 24px); }
+  .modern-space-dialog-copy { padding: 24px 20px; }
+  .modern-space-dialog-copy h2 { font-size: 24px; }
+  #space-dialog-image { max-height: 290px; }
+  .modern-sources h1 { font-size: 30px; }
+  .modern-source-list h2 { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) { #hero-film, .modern-space-photo img { transition: none; } }

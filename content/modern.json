@@ -1,0 +1,140 @@
+{
+  "headline": [
+    "把日常，",
+    "安放得更好。"
+  ],
+  "intro": "室内软装与木作设计。从一个柜子、一间房开始，一起理清家的安排。",
+  "mediaNotice": "本页影像为公开授权展示素材，非云梦空间项目。",
+  "scenes": [
+    {
+      "id": "living",
+      "label": "客餐厅",
+      "desktop": "/media/modern/living-desktop.mp4",
+      "mobile": "/media/modern/living-mobile.mp4",
+      "poster": "/media/modern/living-poster.jpg",
+      "mobilePoster": "/media/modern/living-mobile-poster.jpg",
+      "position": "center",
+      "sourceId": "mixkit-3090"
+    },
+    {
+      "id": "kitchen",
+      "label": "厨房",
+      "desktop": "/media/modern/hero-desktop.mp4",
+      "mobile": "/media/modern/hero-mobile.mp4",
+      "poster": "/media/modern/hero-poster.jpg",
+      "mobilePoster": "/media/modern/hero-mobile-poster.jpg",
+      "position": "center",
+      "sourceId": "mixkit-43033"
+    }
+  ],
+  "spaces": [
+    {
+      "id": "living",
+      "title": "给客厅，留一点从容",
+      "space": "客厅搭配",
+      "category": "软装搭配",
+      "image": "/media/modern/living-clean.jpg",
+      "alt": "公开素材：自然光下的现代客厅、布艺沙发与木色家具，非云梦空间项目。",
+      "position": "center",
+      "description": "先确定想保留的家具，再一起协调木色、布料和照明。空间不用一次填满，也能有舒服的日常。",
+      "considerations": [
+        "先确认家具尺寸和走动的位置。",
+        "在真实采光下比较颜色与材质。",
+        "把最影响使用的部分，放在前面解决。"
+      ],
+      "sourceId": "pexels-29252626"
+    },
+    {
+      "id": "kitchen",
+      "title": "把厨房，安排顺手",
+      "space": "柜体与收纳",
+      "category": "木作收纳",
+      "image": "/media/modern/kitchen-clean.jpg",
+      "alt": "公开素材：浅色厨房柜体与木地板，作为收纳设计讨论示意，非云梦空间项目。",
+      "position": "center",
+      "description": "从常用物品和操作顺序出发，讨论柜体内部、台面和电器位置。立面好看，也要照顾每天的拿取。",
+      "considerations": [
+        "按使用频率安排常用和备用物品。",
+        "把电器尺寸、接电与散热要求提前核对。",
+        "图纸、材料和下单内容，在确认前逐项检查。"
+      ],
+      "sourceId": "pexels-19878539"
+    }
+  ],
+  "details": [
+    {
+      "id": "storage",
+      "label": "收纳",
+      "title": "先看放什么，再想怎么做。",
+      "text": "书、餐具、小家电和换季用品，需要的位置并不一样。先整理物品清单，再讨论柜体尺寸、层板和开放格。",
+      "image": "/media/modern/kitchen-clean.jpg",
+      "alt": "公开素材：浅色厨房柜体与木地板，作为收纳设计讨论示意，非云梦空间项目。",
+      "position": "center"
+    },
+    {
+      "id": "material",
+      "label": "材质",
+      "title": "把几种材料，放在一起比较。",
+      "text": "地板、门板、台面和布料，最终会出现在同一个空间。先看实物与小样，再结合光线、打理方式和预算做选择。",
+      "image": "/media/modern/details.jpg",
+      "alt": "公开素材中的木色餐桌、布艺与金属置物架，作为材质搭配示意。",
+      "position": "center 65%"
+    },
+    {
+      "id": "styling",
+      "label": "搭配",
+      "title": "照顾已有的，也给日后留余地。",
+      "text": "喜欢的沙发和餐桌，可以继续留下。先让大件之间的关系舒服起来，再慢慢补充灯、窗帘和日常的小东西。",
+      "image": "/media/modern/living-clean.jpg",
+      "alt": "公开素材中的现代客厅软装，作为家具与色彩搭配示意。",
+      "position": "center"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mixkit-3090",
+      "title": "Modern living room with wooden furniture",
+      "creator": "Mixkit 素材条目 3090",
+      "page": "https://mixkit.co/free-stock-video/modern-living-room-with-wooden-furniture-3090/",
+      "license": "Mixkit Stock Video Free License",
+      "licenseUrl": "https://mixkit.co/license/#videoFree",
+      "use": "客餐厅首屏视频及封面；静音、压缩与手机画幅裁切。"
+    },
+    {
+      "id": "mixkit-43033",
+      "title": "Interior view of a spacious modern kitchen",
+      "creator": "Mixkit 素材条目 43033",
+      "page": "https://mixkit.co/free-stock-video/interior-view-of-a-spacious-modern-kitchen-43033/",
+      "license": "Mixkit Stock Video Free License",
+      "licenseUrl": "https://mixkit.co/license/#videoFree",
+      "use": "厨房首屏视频及封面；静音、压缩与手机画幅裁切。"
+    },
+    {
+      "id": "pexels-29252626",
+      "title": "Modern Minimalist Living Room Interior with Stylish Sofa",
+      "creator": "Mateusz Pielech / Pexels",
+      "page": "https://www.pexels.com/photo/modern-minimalist-living-room-interior-with-stylish-sofa-29252626/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "use": "客厅展示图片与搭配说明。"
+    },
+    {
+      "id": "pexels-19878539",
+      "title": "Clean Modern Kitchen",
+      "creator": "Lisa Anna / Pexels",
+      "page": "https://www.pexels.com/photo/clean-modern-kitchen-19878539/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "use": "厨房展示图片与收纳说明。"
+    },
+    {
+      "id": "pexels-4846114",
+      "title": "Interior of living room with wooden furniture",
+      "creator": "Rachel Claire / Pexels",
+      "page": "https://www.pexels.com/photo/interior-of-living-room-with-wooden-furniture-4846114/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "use": "材质与软装说明配图。"
+    }
+  ]
+}
