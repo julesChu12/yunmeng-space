@@ -22,3 +22,14 @@ test('部署路径拒绝路径穿越、协议和查询字符', () => {
   assert.equal(normalizeBasePath('/'), '');
   for (const value of ['../site', '/foo/../site', 'https://example.com', 'site?x=1', 'site#fragment']) assert.throws(() => normalizeBasePath(value));
 });
+
+test('GitHub Pages 子目录发布保留 R2 视频的完整域名和版本路径', () => {
+  const desktop = 'https://assets.yunmengspace.com/media/modern/tree-room-desktop-00bbf8cd5eb66933.mp4';
+  const mobile = 'https://assets.yunmengspace.com/media/modern/tree-room-mobile-985697077affbcf3.mp4';
+  const fixture = `<script type="application/json" id="modern-data">${JSON.stringify({ scenes: [{ desktop, mobile, poster: '/media/modern/tree-room-poster.jpg' }] })}</script>`;
+  const output = deploymentHtml(fixture, '/yunmeng-space');
+  const scene = JSON.parse(output.match(/<script[^>]*>(.*?)<\/script>/)[1]).scenes[0];
+  assert.equal(scene.desktop, desktop);
+  assert.equal(scene.mobile, mobile);
+  assert.equal(scene.poster, '/yunmeng-space/media/modern/tree-room-poster.jpg');
+});

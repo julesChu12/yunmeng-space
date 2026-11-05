@@ -9,7 +9,7 @@ export function modernPage(site, content) {
   const detail = content.details[0];
   const main = `<section class="film-hero" aria-labelledby="film-title">
     <div class="film-media">
-      <picture class="film-poster"><source media="(max-width: 767px)" srcset="${e(first.mobilePoster)}"><img src="${e(first.poster)}" alt="公开授权的居家空间影像，非云梦空间项目实拍。" width="1280" height="720" fetchpriority="high"></picture>
+      <picture class="film-poster"><source media="(max-width: 767px)" srcset="${e(first.mobilePoster)}"><img src="${e(first.poster)}" alt="${e(first.alt || '公开授权的居家空间影像，非云梦空间项目实拍。')}" width="1280" height="720" fetchpriority="high"></picture>
       <video id="hero-film" muted playsinline loop preload="metadata" aria-hidden="true" poster="${e(first.poster)}"></video>
     </div>
     <div class="film-shade" aria-hidden="true"></div>

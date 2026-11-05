@@ -111,6 +111,7 @@ async function validateModern(content) {
     for (const key of ['image', 'desktop', 'mobile', 'poster', 'mobilePoster']) if (item[key]) assets.add(item[key]);
   }
   for (const asset of assets) {
+    if (/^https:\/\/assets\.yunmengspace\.com\/media\/modern\/[a-z0-9-]+\.mp4$/.test(asset)) continue;
     if (!/^\/media\/[a-zA-Z0-9/_\-.]+$/.test(asset) || asset.includes('..')) throw new Error(`影像版资源请放在 public/media：${asset}`);
     await stat(path.join(root, 'public', asset)).catch(() => { throw new Error(`影像版资源不存在：${asset}`); });
   }

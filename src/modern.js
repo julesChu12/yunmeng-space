@@ -42,6 +42,7 @@ function initializeModern(content) {
     const poster = compact.matches ? scene.mobilePoster : scene.poster;
     $('.film-poster source').srcset = scene.mobilePoster;
     $('.film-poster img').src = scene.poster;
+    $('.film-poster img').alt = scene.alt || '公开授权的居家空间影像，非云梦空间项目实拍。';
     film.poster = poster;
     film.style.objectPosition = scene.position || 'center';
     film.src = compact.matches ? scene.mobile : scene.desktop;

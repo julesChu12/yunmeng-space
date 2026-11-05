@@ -93,15 +93,19 @@
   .modern-shell { width: calc(100% - 40px); }
   .modern-page .site-header { height: 68px; }
   .modern-page .wordmark { font-size: 20px; }
-  .film-hero { height: min(720px, calc(100svh - 68px)); min-height: 530px; }
-  .film-shade { background: linear-gradient(0deg, rgb(13 24 19 / 70%), rgb(13 24 19 / 5%) 82%); }
-  .film-copy { left: 22px; right: 22px; bottom: 111px; }
+  .film-hero { height: auto; min-height: 0; color: #27362d; background: #eae5da; padding-bottom: 12px; }
+  .film-media { position: relative; aspect-ratio: 16 / 9; height: auto; }
+  .film-shade { display: none; }
+  .film-copy { position: relative; inset: auto; padding: 30px 22px 17px; }
   .film-copy > p { font-size: 11px; margin-bottom: 18px; }
   .film-copy h1 { font-size: clamp(38px, 10.8vw, 52px); line-height: 1.35; }
   .film-link { font-size: 12px; margin-top: 22px; gap: 32px; }
-  .film-controls { left: 22px; right: 22px; bottom: 19px; }
+  .film-link { border-color: currentColor; }
+  .film-controls { position: relative; inset: auto; margin-inline: 22px; }
   .film-scenes { gap: 23px; }
-  .film-controls button { font-size: 11px; }
+  .film-controls button { font-size: 11px; color: inherit; }
+  .film-scenes button[aria-pressed="true"] { border-color: currentColor; }
+  .film-hero :focus-visible { outline-color: var(--accent); }
   .modern-media-notice { font-size: 9px; gap: 10px; align-items: start; }
   .modern-intro, .modern-designer, .modern-services { grid-template-columns: 1fr; gap: 27px; padding-block: 64px; }
   .modern-page h2 { font-size: 30px; }

@@ -4,27 +4,19 @@
     "安放得更好。"
   ],
   "intro": "室内软装与木作设计。从一个柜子、一间房开始，一起理清家的安排。",
-  "mediaNotice": "本页影像为公开授权展示素材，非云梦空间项目。",
+  "mediaNotice": "首屏为用户提供的 AI 生成影像，仅作效果预览，非实际项目。",
   "scenes": [
     {
-      "id": "living",
-      "label": "客餐厅",
-      "desktop": "/media/modern/living-desktop.mp4",
-      "mobile": "/media/modern/living-mobile.mp4",
-      "poster": "/media/modern/living-poster.jpg",
-      "mobilePoster": "/media/modern/living-mobile-poster.jpg",
+      "id": "tree-room",
+      "label": "午后树影",
+      "desktop": "https://assets.yunmengspace.com/media/modern/tree-room-desktop-00bbf8cd5eb66933.mp4",
+      "mobile": "https://assets.yunmengspace.com/media/modern/tree-room-mobile-985697077affbcf3.mp4",
+      "poster": "/media/modern/tree-room-poster.jpg",
+      "mobilePoster": "/media/modern/tree-room-mobile-poster.jpg",
       "position": "center",
-      "sourceId": "mixkit-3090"
-    },
-    {
-      "id": "kitchen",
-      "label": "厨房",
-      "desktop": "/media/modern/hero-desktop.mp4",
-      "mobile": "/media/modern/hero-mobile.mp4",
-      "poster": "/media/modern/hero-poster.jpg",
-      "mobilePoster": "/media/modern/hero-mobile-poster.jpg",
-      "position": "center",
-      "sourceId": "mixkit-43033"
+      "alt": "AI 生成的暖木色客厅，奶油色沙发、窗外两棵绿树与墙面轻动树影，非实际项目。",
+      "duration": 9.433333,
+      "sourceId": "user-gemini-window"
     }
   ],
   "spaces": [
@@ -92,22 +84,13 @@
   ],
   "sources": [
     {
-      "id": "mixkit-3090",
-      "title": "Modern living room with wooden furniture",
-      "creator": "Mixkit 素材条目 3090",
-      "page": "https://mixkit.co/free-stock-video/modern-living-room-with-wooden-furniture-3090/",
-      "license": "Mixkit Stock Video Free License",
-      "licenseUrl": "https://mixkit.co/license/#videoFree",
-      "use": "客餐厅首屏视频及封面；静音、压缩与手机画幅裁切。"
-    },
-    {
-      "id": "mixkit-43033",
-      "title": "Interior view of a spacious modern kitchen",
-      "creator": "Mixkit 素材条目 43033",
-      "page": "https://mixkit.co/free-stock-video/interior-view-of-a-spacious-modern-kitchen-43033/",
-      "license": "Mixkit Stock Video Free License",
-      "licenseUrl": "https://mixkit.co/license/#videoFree",
-      "use": "厨房首屏视频及封面；静音、压缩与手机画幅裁切。"
+      "id": "user-gemini-window",
+      "title": "午后树影客厅",
+      "creator": "用户提供 / Gemini AI 生成影像",
+      "page": "https://share.gemini.google/pzHNzmLaLK50",
+      "license": "用户指定素材，用于官网效果展示",
+      "licenseUrl": "https://share.gemini.google/pzHNzmLaLK50",
+      "use": "首屏影像；保留原速正向运动、静音压缩、片尾 0.6 秒衔接片头，另备手机视频与封面。"
     },
     {
       "id": "pexels-29252626",
