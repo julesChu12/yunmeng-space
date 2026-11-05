@@ -22,8 +22,6 @@
 .film-play-symbol { display: block; width: 9px; height: 12px; border-left: 3px solid; border-right: 3px solid; }
 #film-toggle[data-paused="true"] .film-play-symbol { width: 0; height: 0; border: 6px solid transparent; border-right: 0; border-left: 9px solid; }
 .film-hero :focus-visible { outline-color: #fff; }
-.modern-media-notice { font-size: 10px; line-height: 1.8; color: var(--muted); padding-top: 14px; display: flex; justify-content: space-between; gap: 18px; }
-.modern-media-notice a { flex-shrink: 0; text-decoration: underline; }
 .modern-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-block: 104px 112px; }
 .modern-page h2 { font-size: clamp(30px, 3vw, 43px); line-height: 1.45; letter-spacing: -.025em; }
 .modern-intro > div { max-width: 470px; padding-top: 6px; }
@@ -106,7 +104,6 @@
   .film-controls button { font-size: 11px; color: inherit; }
   .film-scenes button[aria-pressed="true"] { border-color: currentColor; }
   .film-hero :focus-visible { outline-color: var(--accent); }
-  .modern-media-notice { font-size: 9px; gap: 10px; align-items: start; }
   .modern-intro, .modern-designer, .modern-services { grid-template-columns: 1fr; gap: 27px; padding-block: 64px; }
   .modern-page h2 { font-size: 30px; }
   .modern-intro p, .modern-designer p:not(.modern-kicker) { font-size: 13px; }

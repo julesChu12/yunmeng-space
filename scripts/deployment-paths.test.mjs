@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { runInNewContext } from 'node:vm';
 import { deploymentHtml, normalizeBasePath } from './deployment-paths.mjs';
+import { modernHomeRedirectPage } from '../src/modern.mjs';
 
 test('项目站前缀同时覆盖 HTML、响应式封面与客户端视频配置', () => {
   const fixture = '<a href="/modern/#spaces">空间</a><a href="#main">跳过</a><a href="https://example.com/">外链</a><img src="/images/home.jpg" srcset="/images/small.jpg 640w, /images/large.jpg 1280w"><video poster="/media/cover.jpg"></video><button data-lightbox="/images/full.jpg"></button><script type="application/json" id="modern-data">{"scenes":[{"desktop":"/media/desktop.mp4","mobile":"/media/mobile.mp4","source":"https://example.com/"}],"text":"文字"}</script>';
@@ -32,4 +34,20 @@ test('GitHub Pages 子目录发布保留 R2 视频的完整域名和版本路径
   assert.equal(scene.desktop, desktop);
   assert.equal(scene.mobile, mobile);
   assert.equal(scene.poster, '/yunmeng-space/media/modern/tree-room-poster.jpg');
+});
+
+test('旧影像地址跳转首页，保留查询参数、锚点与项目站前缀', () => {
+  const html = modernHomeRedirectPage({ brand: '云梦空间' });
+  assert.match(html, /http-equiv="refresh" content="0;url=\.\.\/"/);
+  const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+  for (const [source, expected] of [
+    ['https://yunmengspace.com/modern/?from=share#spaces', 'https://yunmengspace.com/?from=share#spaces'],
+    ['https://example.github.io/yunmeng-space/modern/?from=share#designer', 'https://example.github.io/yunmeng-space/?from=share#designer'],
+    ['https://yunmengspace.com/modern/index.html', 'https://yunmengspace.com/']
+  ]) {
+    const current = new URL(source);
+    let destination;
+    runInNewContext(script, { URL, window: { location: { href: source, search: current.search, hash: current.hash, replace(value) { destination = value; } } } });
+    assert.equal(destination, expected);
+  }
 });

@@ -42,7 +42,7 @@ function initializeModern(content) {
     const poster = compact.matches ? scene.mobilePoster : scene.poster;
     $('.film-poster source').srcset = scene.mobilePoster;
     $('.film-poster img').src = scene.poster;
-    $('.film-poster img').alt = scene.alt || '公开授权的居家空间影像，非云梦空间项目实拍。';
+    $('.film-poster img').alt = scene.alt || '自然光下的居家空间。';
     film.poster = poster;
     film.style.objectPosition = scene.position || 'center';
     film.src = compact.matches ? scene.mobile : scene.desktop;
@@ -75,7 +75,7 @@ function initializeModern(content) {
     $$('[data-space-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
     $$('[data-space-category]').forEach((item) => { item.hidden = filter !== 'all' && item.dataset.spaceCategory !== filter; if (!item.hidden) count++; });
     $('.modern-space-grid').dataset.filtered = String(filter !== 'all');
-    $('[data-space-filter-status]').textContent = `显示 ${count} 个空间示意`;
+    $('[data-space-filter-status]').textContent = `显示 ${count} 个空间`;
   }));
 
   const dialog = $('#space-dialog');

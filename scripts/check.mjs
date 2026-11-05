@@ -6,6 +6,9 @@ import { build, dist } from './build.mjs';
 // 检查生成结果，重点防止内容替换后出现图片丢失、断链或错误发布。
 const { pages, content, basePath } = await build();
 const htmlByPath = new Map(await Promise.all(pages.map(async (name) => [name, await readFile(path.join(dist, name), 'utf8')])));
+assert.match(htmlByPath.get('index.html'), /id="hero-film"/, '首页应使用影像版');
+assert.match(htmlByPath.get('index.html'), /id="modern-data"/, '首页应包含 R2 视频配置');
+assert.match(htmlByPath.get('modern/index.html'), /http-equiv="refresh"/, '旧影像地址应跳转到首页');
 let references = 0;
 for (const [name, html] of htmlByPath) {
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${name} 应有且仅有一个主标题`);

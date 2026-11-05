@@ -30,10 +30,10 @@ test('开发服务必须载入修改后的模板，而不是复用旧模块', { 
     const url = `http://127.0.0.1:${port}/`;
     console.log(`测试服务已启动：${url}`);
     const original = await (await fetch(url, { signal: AbortSignal.timeout(2000) })).text();
-    assert.ok(original.includes('看看家的不同安排'));
-    const filename = path.join(fixture, 'src/templates.mjs');
+    assert.ok(original.includes('从一个空间开始'));
+    const filename = path.join(fixture, 'src/modern.mjs');
     const marker = '模板实时更新验收标记';
-    await writeFile(filename, (await readFile(filename, 'utf8')).replace('看看家的不同安排', marker));
+    await writeFile(filename, (await readFile(filename, 'utf8')).replace('从一个空间开始', marker));
     console.log('模板已修改，检查服务是否载入新内容。');
     for (let i = 0; i < 60; i++) {
       await delay(100);

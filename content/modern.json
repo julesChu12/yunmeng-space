@@ -4,7 +4,6 @@
     "安放得更好。"
   ],
   "intro": "室内软装与木作设计。从一个柜子、一间房开始，一起理清家的安排。",
-  "mediaNotice": "首屏为用户提供的 AI 生成影像，仅作效果预览，非实际项目。",
   "scenes": [
     {
       "id": "tree-room",
@@ -14,7 +13,7 @@
       "poster": "/media/modern/tree-room-poster.jpg",
       "mobilePoster": "/media/modern/tree-room-mobile-poster.jpg",
       "position": "center",
-      "alt": "AI 生成的暖木色客厅，奶油色沙发、窗外两棵绿树与墙面轻动树影，非实际项目。",
+      "alt": "暖木色客厅，奶油色沙发、窗外两棵绿树与墙面轻动树影。",
       "duration": 9.433333,
       "sourceId": "user-gemini-window"
     }
@@ -26,7 +25,7 @@
       "space": "客厅搭配",
       "category": "软装搭配",
       "image": "/media/modern/living-clean.jpg",
-      "alt": "公开素材：自然光下的现代客厅、布艺沙发与木色家具，非云梦空间项目。",
+      "alt": "自然光下的现代客厅、布艺沙发与木色家具。",
       "position": "center",
       "description": "先确定想保留的家具，再一起协调木色、布料和照明。空间不用一次填满，也能有舒服的日常。",
       "considerations": [
@@ -42,7 +41,7 @@
       "space": "柜体与收纳",
       "category": "木作收纳",
       "image": "/media/modern/kitchen-clean.jpg",
-      "alt": "公开素材：浅色厨房柜体与木地板，作为收纳设计讨论示意，非云梦空间项目。",
+      "alt": "浅色厨房柜体与木地板。",
       "position": "center",
       "description": "从常用物品和操作顺序出发，讨论柜体内部、台面和电器位置。立面好看，也要照顾每天的拿取。",
       "considerations": [
@@ -60,7 +59,7 @@
       "title": "先看放什么，再想怎么做。",
       "text": "书、餐具、小家电和换季用品，需要的位置并不一样。先整理物品清单，再讨论柜体尺寸、层板和开放格。",
       "image": "/media/modern/kitchen-clean.jpg",
-      "alt": "公开素材：浅色厨房柜体与木地板，作为收纳设计讨论示意，非云梦空间项目。",
+      "alt": "浅色厨房柜体与木地板。",
       "position": "center"
     },
     {
@@ -69,7 +68,7 @@
       "title": "把几种材料，放在一起比较。",
       "text": "地板、门板、台面和布料，最终会出现在同一个空间。先看实物与小样，再结合光线、打理方式和预算做选择。",
       "image": "/media/modern/details.jpg",
-      "alt": "公开素材中的木色餐桌、布艺与金属置物架，作为材质搭配示意。",
+      "alt": "木色餐桌、布艺与金属置物架。",
       "position": "center 65%"
     },
     {
@@ -78,7 +77,7 @@
       "title": "照顾已有的，也给日后留余地。",
       "text": "喜欢的沙发和餐桌，可以继续留下。先让大件之间的关系舒服起来，再慢慢补充灯、窗帘和日常的小东西。",
       "image": "/media/modern/living-clean.jpg",
-      "alt": "公开素材中的现代客厅软装，作为家具与色彩搭配示意。",
+      "alt": "现代客厅中的家具与色彩搭配。",
       "position": "center"
     }
   ],

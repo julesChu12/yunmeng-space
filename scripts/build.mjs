@@ -1,9 +1,9 @@
 import { readFile, writeFile, mkdir, cp, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { homePage, projectsPage, projectPage, journalPage, notePage, notFoundPage, escapeHtml } from '../src/templates.mjs';
+import { projectsPage, projectPage, journalPage, notePage, notFoundPage, escapeHtml } from '../src/templates.mjs';
 import { socialPlatforms } from '../src/socials.mjs';
-import { modernPage, modernSourcesPage } from '../src/modern.mjs';
+import { modernPage, modernHomeRedirectPage, modernSourcesPage } from '../src/modern.mjs';
 import { deploymentHtml, normalizeBasePath } from './deployment-paths.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
@@ -44,7 +44,6 @@ export async function validateContent({ site, projects, notes }) {
     if (!['concept', 'real'].includes(project.kind)) throw new Error(`案例性质必须为 concept 或 real：${project.slug}`);
     if (!Array.isArray(project.categories) || !project.categories.length) throw new Error(`缺少筛选分类：${project.slug}`);
     requireText(project.coverAlt, `${project.slug}.coverAlt`);
-    requireText(project.imageCredit, `${project.slug}.imageCredit`);
     if (!Array.isArray(project.facts) || !Array.isArray(project.gallery)) throw new Error(`缺少 facts 或 gallery：${project.slug}`);
   }
   for (const note of site.hero.notes) {
@@ -69,11 +68,11 @@ export async function build({ basePath = process.env.DEPLOY_BASE_PATH || '' } = 
   const { site, projects, notes, modern } = content;
   await validateModern(modern);
   const pages = new Map([
-    ['index.html', homePage(site, projects, notes)],
+    ['index.html', modernPage(site, modern)],
     ['projects/index.html', projectsPage(site, projects)],
     ['journal/index.html', journalPage(site, notes)],
     ['404.html', notFoundPage(site)],
-    ['modern/index.html', modernPage(site, modern)],
+    ['modern/index.html', modernHomeRedirectPage(site)],
     ['modern/sources/index.html', modernSourcesPage(site, modern)]
   ]);
   projects.forEach((project, index) => pages.set(`projects/${project.slug}/index.html`, projectPage(site, project, projects.length > 1 ? projects[(index + 1) % projects.length] : null)));
@@ -92,7 +91,7 @@ export async function build({ basePath = process.env.DEPLOY_BASE_PATH || '' } = 
     cp(path.join(root, 'src/modern.js'), path.join(dist, 'modern.js')),
     writeFile(path.join(dist, 'robots.txt'), site.indexable && site.siteUrl ? `User-agent: *\nAllow: /\nSitemap: ${new URL('/sitemap.xml', site.siteUrl).href}\n` : 'User-agent: *\nDisallow: /\n')
   ]);
-  const urls = [...pages.keys()].filter((name) => name !== '404.html').map((name) => `/${name.replace(/index\.html$/, '')}`);
+  const urls = [...pages.keys()].filter((name) => !['404.html', 'modern/index.html'].includes(name)).map((name) => `/${name.replace(/index\.html$/, '')}`);
   const sitemap = site.siteUrl && site.indexable ? `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${escapeHtml(new URL(url, site.siteUrl).href)}</loc></url>`).join('')}</urlset>` : '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
   await writeFile(path.join(dist, 'sitemap.xml'), sitemap);
   return { pages: [...pages.keys()], content, basePath };
