@@ -28,6 +28,7 @@
 .modern-intro p, .modern-designer p:not(.modern-kicker) { color: var(--muted); font-size: 14px; line-height: 2; margin-bottom: 17px; }
 .modern-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 38px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--accent); color: var(--accent); font-size: 13px; }
 .modern-intro .modern-link { margin-top: 12px; }
+.modern-spaces > .modern-link { margin-top: 32px; }
 .modern-spaces { padding-block: 0 120px; }
 .modern-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding-top: 29px; border-top: 1px solid var(--line); }
 .modern-section-heading h2 { font-size: 30px; }

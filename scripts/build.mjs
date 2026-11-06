@@ -5,6 +5,7 @@ import { projectsPage, projectPage, journalPage, notePage, notFoundPage, escapeH
 import { socialPlatforms } from '../src/socials.mjs';
 import { modernPage, modernHomeRedirectPage, modernSourcesPage } from '../src/modern.mjs';
 import { deploymentHtml, normalizeBasePath } from './deployment-paths.mjs';
+import { isIndexablePage } from '../src/seo.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const dist = path.join(root, 'dist');
@@ -24,7 +25,11 @@ export async function validateContent({ site, projects, notes }) {
   requireText(site.tagline, 'site.tagline');
   requireText(site.hero.image, 'site.hero.image');
   if (!Array.isArray(site.hero.notes) || !site.hero.notes.length) throw new Error('至少需要一条首页设计批注');
-  if (site.siteUrl && !/^https?:\/\//.test(site.siteUrl)) throw new Error('siteUrl 必须是完整的 http(s) 地址');
+  if (site.indexable && !site.siteUrl) throw new Error('开放收录前请填写正式官网域名');
+  if (site.siteUrl) {
+    const url = new URL(site.siteUrl);
+    if (url.protocol !== 'https:' || url.username || url.password || url.pathname !== '/' || url.search || url.hash) throw new Error('官网域名必须是 HTTPS 根地址，不能包含登录信息、路径或查询参数');
+  }
   if (site.companyRegistered && !site.proposedCompanyName) throw new Error('展示已登记公司前请填写实际公司名称');
   const assets = new Set([site.hero.image, site.contact.qrImage].filter(Boolean));
   for (const collection of [projects, notes]) {
@@ -67,6 +72,10 @@ export async function build({ basePath = process.env.DEPLOY_BASE_PATH || '' } = 
   await validateContent(content);
   const { site, projects, notes, modern } = content;
   await validateModern(modern);
+  if (site.shareImage) {
+    if (!/^\/(?:images|media)\/[a-zA-Z0-9/_\-.]+$/.test(site.shareImage) || site.shareImage.includes('..')) throw new Error('分享图必须使用 public/images 或 public/media 内的图片');
+    await stat(path.join(root, 'public', site.shareImage));
+  }
   const pages = new Map([
     ['index.html', modernPage(site, modern)],
     ['projects/index.html', projectsPage(site, projects)],
@@ -91,7 +100,7 @@ export async function build({ basePath = process.env.DEPLOY_BASE_PATH || '' } = 
     cp(path.join(root, 'src/modern.js'), path.join(dist, 'modern.js')),
     writeFile(path.join(dist, 'robots.txt'), site.indexable && site.siteUrl ? `User-agent: *\nAllow: /\nSitemap: ${new URL('/sitemap.xml', site.siteUrl).href}\n` : 'User-agent: *\nDisallow: /\n')
   ]);
-  const urls = [...pages.keys()].filter((name) => !['404.html', 'modern/index.html'].includes(name)).map((name) => `/${name.replace(/index\.html$/, '')}`);
+  const urls = [...pages.keys()].map((name) => `/${name.replace(/index\.html$/, '')}`).filter((url) => isIndexablePage(site, url));
   const sitemap = site.siteUrl && site.indexable ? `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${escapeHtml(new URL(url, site.siteUrl).href)}</loc></url>`).join('')}</urlset>` : '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
   await writeFile(path.join(dist, 'sitemap.xml'), sitemap);
   return { pages: [...pages.keys()], content, basePath };
